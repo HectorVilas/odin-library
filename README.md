@@ -7,7 +7,7 @@
 
 ## About the project:
 
-This time I'm making a library. This will be a single page, where the user can make a list with books, indicating name, author, number of pages and if it was readed or not.
+This time I'm making a library. This will be a single page, where the user can make a list with books, indicating name, author, number of pages and if it was read or not.
 
 This is just another practice. This time it's about object constructors, first with the "old" way (`function` constructors and `prototype`s), then the modern way (`class`, `constructor`, etc), the "syntactical sugar" way, as introduced in ECMAScript 6 in 2015.
 
@@ -39,13 +39,13 @@ I was thinking on making something more visual, like a bookshelf with physical b
 - - the book title
 - - the author
 - - number of pages
-- - a disabled checked/unchecked checkbox showing the "readed" status
+- - a disabled checked/unchecked checkbox showing the "read" status
 - - an "edit" button
 - an edit/add book modal with:
 - - an input text for book title
 - - an input text for author
 - - an input number for pages
-- - a checkbox for "readed"
+- - a checkbox for "read"
 - - a "save"/"add" button (context sensitive)
 - - a "cancel"/"delete" button (context sensitive)
 
@@ -55,8 +55,8 @@ I was thinking on making something more visual, like a bookshelf with physical b
 - - an array for the book's title
 - - an array for the book's author name
 - - a num primitive for number of pages
-- - a boolean for "readed" status
-- a prototype for a shared function to toggle the "readed" status
+- - a boolean for "read" status
+- a prototype for a shared function to toggle the "read" status
 - as sugested by the course, the index may be stored in the DOM as a data-attribute
 
 I think this is enough to start. As always, I'll update this README.md with my progress.
