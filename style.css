@@ -1,0 +1,121 @@
+:root {
+  /*https://www.colourlovers.com/palette/4881049/Field_Of_Gold*/
+  /* --color-1: #795C5F;
+  --color-2: #A69658;
+  --color-3: #D9B26F;
+  --color-4: #FADF7F;
+  --color-5: #F2E29F; */
+  --color-1: #333;
+  --color-2: #555;
+  --color-3: #777;
+  --color-4: #999;
+  --color-5: #aaa;
+}
+
+@font-face {
+  font-family: CoffeeTin;
+  src: url(./media/fonts/CoffeeTin\ Initials.ttf);
+  /*https://www.1001freefonts.com/coffee-tin.font*/
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* - - - header related - - - */
+
+header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--color-2);
+  padding: .5rem;
+  filter: drop-shadow(0rem 0rem .5rem black);
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  font-family: CoffeeTin, 'Courier New', Courier, monospace;
+  letter-spacing: -.1em;
+}
+
+input[type="search"] {
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color-3);
+  box-shadow: inset .25rem .25rem .5rem rgba(0, 0, 0, .75);
+  padding: 0 1rem;
+  font-size: 1.25em;
+}
+
+
+
+/* - - - created items related - - - */
+
+main {
+  display: grid;
+  overflow-y: auto;
+  background-color: var(--color-5);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-auto-rows: minmax(400px, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    "author author"
+    "pages readed"
+    "edit edit";
+  padding: 1.5rem;
+  gap: 1.5rem;
+  background-color: var(--color-2);
+}
+.card div {
+  align-self: center;
+}
+.title {
+  grid-area: title;
+  font-family: 'Times New Roman', Times, serif;
+  justify-self: center;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.author {
+  grid-area: author;
+  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  justify-self: center;
+}
+.pages {
+  grid-area: pages;
+  font-size: 1.5rem;
+  justify-self: right;
+}
+.readed {
+  grid-area: readed;
+  font-size: 1.5rem;
+  justify-self: left;
+}
+.edit {
+  grid-area: edit;
+  justify-self: center;
+}.edit button {
+  font-size: 1rem;
+  padding: .5rem 2.5rem;
+}
+
+
+
+/* for testing */
+
+** {
+  outline: 1px solid royalblue;
+}
