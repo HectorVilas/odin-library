@@ -28,7 +28,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   background-color: var(--color-2);
   padding: .5rem;
   filter: drop-shadow(0rem 0rem .5rem black);
@@ -45,7 +45,8 @@ input[type="search"] {
   border-radius: 1rem;
   border: none;
   background-color: var(--color-3);
-  box-shadow: inset .25rem .25rem .5rem rgba(0, 0, 0, .75);
+  box-shadow: inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
+    .25rem .25rem .25rem rgba(255, 255, 255, .25);
   padding: 0 1rem;
   font-size: 1.25em;
 }
@@ -54,6 +55,7 @@ input[type="search"] {
 
 /* - - - created items related - - - */
 
+/* cards container */
 main {
   display: grid;
   overflow-y: auto;
@@ -68,6 +70,7 @@ main {
   scrollbar-color: var(--color-1) var(--color-3);
 }
 
+/* card design */
 .card {
   position: relative;
   display: grid;
@@ -89,7 +92,13 @@ main {
     #888 1.5rem,
     #888);
   border-radius: .3rem 1rem 1rem .3rem;
+  box-shadow: .25rem .25rem 1rem #333;
+  transition: filter ease-out 250ms;
+} .card:hover {
+  filter: drop-shadow(0 0 .5rem white);
+  z-index: 1;
 }
+/* card content, shared properties */
 .card * {
   align-self: center;
   text-align: center;
@@ -114,10 +123,29 @@ main {
 .edit {
   grid-area: edit;
   justify-self: right;
-  justify-self: center;
-  font-size: 1em;
-  padding: .25rem 1.5rem;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  background-color: #bbb;
+  box-shadow: inset .1rem .1rem .5rem rgba(0, 0, 0, .75),
+    .1rem .1rem .25rem rgba(255, 255, 255, .1);
+    transition: box-shadow 200ms, background-color 300ms 300ms;
+  } .edit:hover {
+  box-shadow: inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
+    .1rem .1rem .25rem rgba(0, 0, 0, .5);
+  background-color: #ddd;
 }
+.edit > img {
+  width: 100%;
+  transition: width 200ms, transform 50ms;
+}
+.edit:hover > img {
+  width: 100%;
+  transform: translate(-.1rem, -.1rem);
+}
+
+/* card read ribbon */
 .card.read::before {
   position: absolute;
   bottom: 0;
