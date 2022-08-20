@@ -60,3 +60,21 @@ I was thinking on making something more visual, like a bookshelf with physical b
 - as sugested by the course, the index may be stored in the DOM as a data-attribute
 
 I think this is enough to start. As always, I'll update this README.md with my progress.
+
+## update 1
+I started with the project, nothing special, just a `<header>` and a `<main>`. I've been browsing for color palletes, but I think I need more than those two things before deciding for this, so I made everything grayscale for now.
+
+I downloaded the Coffee Tin font from [here](https://www.1001freefonts.com/coffee-tin.font) to use in the project. This font looks amazing, but I'm not sure how I should handle it, having a very black top half and mostly transparent bottom half. For now I'm using it in the title.
+
+After this, I started writing the `CSS`, preparing the terrain for the cards. I went for the `grid` display, with `auto-fit` for colums, so it can adjust itself dynamically depending on the viewport width.
+
+Then I started with the card design. It looked so bland, so I changed it's borders and added a linear-gradient to make it like a book. It was going to have a disabled checkbox to indicate the read status, but I went for something a little different: a ribbon with a "read" message wrapped in the corner of the book (the card).
+
+![](READMEmd/progress01.png)
+
+The ribbon is a `::before` and `::after`. The text is isolated in one of those so I can rotate it 45° without rotating the full object. The other one is the ribbon itself, it's shape was made with `clip-path`, then moved to the bottom left of the card. A `box-shadow` has been applied with `inset` to give it a 3D feeling, like going around the book.
+
+For now those cards are placeholders. `JavaScript` has only been used to clone the card so I can see how it behaves with thy dynamic `grid`. Then I added the "read" class to some of the cards to check how the ribbon looks.
+
+### next steps
+I want to play a little more with `CSS`, maybe add something else in the header (I'm even thinking on making it into a footer), try some palletes and fonts, then I should start working with the code.
