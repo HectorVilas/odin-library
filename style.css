@@ -64,52 +64,58 @@ main {
   grid-auto-rows: minmax(400px, 1fr);
   gap: 1rem;
   padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-1) var(--color-3);
 }
 
 .card {
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr / repeat(2, 1fr);
+  grid-template: 3fr 2fr 1fr 1fr / 1fr;
   grid-template-areas:
-    "title title"
-    "author author"
-    "pages readed"
-    "edit edit";
-  padding: 1.5rem;
+    "title"
+    "author"
+    "pages"
+    "edit";
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
   gap: 1.5rem;
-  background-color: var(--color-2);
+  background: linear-gradient(to right,
+    #444 0,
+    #555 .25rem,
+    #555 .5rem,
+    #444 1rem,
+    #444 1.25rem,
+    #777 1.5rem,
+    #888 1.5rem,
+    #888);
+  border-radius: .3rem 1rem 1rem .3rem;
 }
-.card div {
+.card * {
   align-self: center;
+  text-align: center;
+  justify-self: center;
 }
 .title {
   grid-area: title;
   font-family: 'Times New Roman', Times, serif;
-  justify-self: center;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 2.5em;
 }
 .author {
   grid-area: author;
-  font-size: 2rem;
+  font-size: 2em;
   font-family: 'Times New Roman', Times, serif;
   justify-self: center;
 }
 .pages {
   grid-area: pages;
-  font-size: 1.5rem;
-  justify-self: right;
-}
-.readed {
-  grid-area: readed;
-  font-size: 1.5rem;
-  justify-self: left;
+  font-size: 1.25em;
 }
 .edit {
   grid-area: edit;
+  justify-self: right;
   justify-self: center;
-}.edit button {
-  font-size: 1rem;
-  padding: .5rem 2.5rem;
+  font-size: 1em;
+  padding: .25rem 1.5rem;
 }
 
 
