@@ -76,5 +76,13 @@ The ribbon is a `::before` and `::after`. The text is isolated in one of those s
 
 For now those cards are placeholders. `JavaScript` has only been used to clone the card so I can see how it behaves with thy dynamic `grid`. Then I added the "read" class to some of the cards to check how the ribbon looks.
 
+The card got a little edit:
+
+![](READMEmd/progress02.gif)
+
+First the `:hover` had a transition, but felt weird having a button, so I change id to a glow effect. I'm still not sure if I'm going to keep it, everything in the page now looks... blurry.
+
+I also spent some time drawing a new icon for the edit button. I think now I get how InkScape works. I was especting to draw with vectors freely, mergin nodes and especting to still be a single object (like I did in the old Macromedia Flash 5 in my teen years). So I drew the pencil with individual lines, then re-drew each part as an individual object.
+
 ### next steps
 I want to play a little more with `CSS`, maybe add something else in the header (I'm even thinking on making it into a footer), try some palletes and fonts, then I should start working with the code.
