@@ -66,7 +66,7 @@ I started with the project, nothing special, just a `<header>` and a `<main>`. I
 
 I downloaded the Coffee Tin font from [here](https://www.1001freefonts.com/coffee-tin.font) to use in the project. This font looks amazing, but I'm not sure how I should handle it, having a very black top half and mostly transparent bottom half. For now I'm using it in the title.
 
-After this, I started writing the `CSS`, preparing the terrain for the cards. I went for the `grid` display, with `auto-fit` for colums, so it can adjust itself dynamically depending on the viewport width.
+After this, I started writing the `CSS`, preparing the terrain for the cards. I went for the `grid` display, with `auto-fit` for columns, so it can adjust itself dynamically depending on the viewport width.
 
 Then I started with the card design. It looked so bland, so I changed it's borders and added a linear-gradient to make it like a book. It was going to have a disabled checkbox to indicate the read status, but I went for something a little different: a ribbon with a "read" message wrapped in the corner of the book (the card).
 
@@ -80,9 +80,9 @@ The card got a little edit:
 
 ![](READMEmd/progress02.gif)
 
-First the `:hover` had a transition, but felt weird having a button, so I change id to a glow effect. I'm still not sure if I'm going to keep it, everything in the page now looks... blurry.
+First the `:hover` had a transition, but felt weird having a button, so I change it to a glow effect. I'm still not sure if I'm going to keep it, everything in the page now looks... blurry.
 
-I also spent some time drawing a new icon for the edit button. I think now I get how InkScape works. I was especting to draw with vectors freely, mergin nodes and especting to still be a single object (like I did in the old Macromedia Flash 5 in my teen years). So I drew the pencil with individual lines, then re-drew each part as an individual object.
+I also spent some time drawing a new icon for the edit button. I think now I get how InkScape works. I was expecting to draw with vectors freely, merging nodes and especting to still be a single object (like I did in the old Macromedia Flash 5 in my teen years). So I drew the pencil with individual lines, then re-drew each part as an individual object.
 
 ### next steps
-I want to play a little more with `CSS`, maybe add something else in the header (I'm even thinking on making it into a footer), try some palletes and fonts, then I should start working with the code.
+I want to play a little more with `CSS`, maybe add something else in the header (I'm even thinking on making it into a footer), try some palettes and fonts, then I should start working with the code.
