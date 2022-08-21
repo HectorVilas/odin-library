@@ -3,8 +3,6 @@
 ## Live: 
 ## https://hectorvilas.github.io/odin-library/
 
----
-
 ## About the project:
 
 This time I'm making a library. This will be a single page, where the user can make a list with books, indicating name, author, number of pages and if it was read or not.
@@ -86,3 +84,16 @@ I also spent some time drawing a new icon for the edit button. I think now I get
 
 ### next steps
 I want to play a little more with `CSS`, maybe add something else in the header (I'm even thinking on making it into a footer), try some palettes and fonts, then I should start working with the code.
+
+### edit
+I forgot to mention that I'm working with the [meyerweb's CSS reset](https://meyerweb.com/eric/tools/css/reset/) to normalize properties between browsers, also to not have to remove `padding` and `marging` on almost everything. It feels like I have to do some extra work with it, like adding again font size, weight and other properties to `<h1>`. Anyways, I just wanted to experience working with something like this.
+
+## update 2
+I've been making adjusts in the `CSS` here and there, trying to remove the blurriness. The cards don't have a `:hover` effect anymore, it's shadow are les diffuse, the header got it's `filter: drop-shadow()` replaced by `box-shadow` with `inset` property to not lose the non-flat feeling.
+
+After this, I went for the search bar. It will be compressed when unfocused. Once the user focuses it, or if it still have some text on it, it will expand. The background color and magnifier glass icon will be lighter.
+
+![](./READMEmd/progress03.gif)
+
+### next steps
+I still don't know about the pallete, it will be kept as grayscale for now. I should finally focus in the `JavaScript` code.
