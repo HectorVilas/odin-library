@@ -111,7 +111,8 @@ main {
   background-color: var(--color-5);
   grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
   justify-content: space-around;
-  grid-template-rows: repeat(auto-fill, minmax(450px, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(450px, 1fr)); */
+  grid-template-rows: repeat(auto-fill, minmax(400px, 450px));
   grid-auto-rows: minmax(400px, 1fr);
   gap: 2rem;
   padding: 1rem;
