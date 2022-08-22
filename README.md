@@ -98,8 +98,8 @@ After this, I went for the search bar. It will be compressed when unfocused. Onc
 ### next steps
 I still don't know about the pallete, it will be kept as grayscale for now. I should finally focus in the `JavaScript` code.
 
-## update 2
-Today I finished with the styling. I made a lot of minor changes to existing elements, except for the color palette.
+## update 3
+Today I finished with the styling. I made a lot of minor changes to existing elements, except for the color palette. I also disabled most of the transitions. I like it, but also there's too much movement in the page, so for now the only animated item is the search bar expanding.
 
 Then I noticed I forgot to add a button to create cards, so I used the empty space at the right of the header. Added a little plus icon at the left of it's text, to make it more noticeable. I may change it's color to green, feels appropiate.
 
