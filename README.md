@@ -97,3 +97,70 @@ After this, I went for the search bar. It will be compressed when unfocused. Onc
 
 ### next steps
 I still don't know about the pallete, it will be kept as grayscale for now. I should finally focus in the `JavaScript` code.
+
+## update 2
+Today I finished with the styling. I made a lot of minor changes to existing elements, except for the color palette.
+
+Then I noticed I forgot to add a button to create cards, so I used the empty space at the right of the header. Added a little plus icon at the left of it's text, to make it more noticeable. I may change it's color to green, feels appropiate.
+
+![](READMEmd/progress04.gif)
+
+After finishing with the fun part, I started with `JavaScript`, the even more fun part. I made an array to store the books as objects and filled it with placeholders.
+
+```javascript
+let myLibrary = [
+  {title: "book 1", author: "author 1", pages: 100, read: false},
+  {title: "book 2", author: "author 2", pages: 200, read: true},
+  {title: "book 3", author: "author 3", pages: 300, read: false},
+  {title: "book 4", author: "author 4", pages: 400, read: false},
+  {title: "book 5", author: "author 5", pages: 500, read: false}
+];
+```
+
+Then I wrote a function to show each book as a card in the page. This is the code:
+
+```javascript
+function placeBooks() {
+  main.innerHTML = "";
+
+  myLibrary.forEach((book, i) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    
+    if(book.read) card.classList.add("read");
+    
+    card.setAttribute("data-index", i);
+
+    const title = document.createElement("p");
+    title.classList.add("title");
+    title.innerText = book.title;
+    card.appendChild(title);
+    
+    const author = document.createElement("p");
+    author.classList.add("author");
+    author.innerText = `by ${book.author}`;
+    card.appendChild(author);
+
+    const pages = document.createElement("p");
+    pages.classList.add("pages");
+    pages.innerText = `${book.pages} pages`;
+    card.appendChild(pages);
+    const edit = document.createElement("button");
+    edit.classList.add("edit");
+    const image = document.createElement("img");
+    image.src = "./media/icons/edit.png";
+    edit.appendChild(image);
+    card.appendChild(edit);
+
+    main.appendChild(card);
+  });
+};
+```
+
+It's not intuitive at all, but this is the way I learned to do it. I may change it for an easier to read `.innerHTML` in the future if it is possible.
+
+### next steps
+
+I've been looking for info about modals (I wrongly called them prompts in the past) and it's really easy to use and tweak, so I'm going to make one for the book creation. On my personal projects I made modals in a "hacky way", this time I'm doing it right. I'm going to use all the knowledge I got from one of the previous practices, [forms](https://github.com/HectorVilas/odin-form), to make it look and feel good.
+
+Once I have a functional modal, I should keep working with the code. I have to make a `constructor` for books and let the modal set it's data.
