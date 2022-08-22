@@ -26,7 +26,7 @@ header {
   gap: 10vw;
   /* background-color: var(--color-2); */
   background: linear-gradient(to top, var(--color-2) 0, #888 60%);
-  padding: .75rem;
+  padding: .75rem 5vw;
   box-shadow: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
 }
 
@@ -36,6 +36,7 @@ header h1 {
   font-family: CoffeeTin, 'Courier New', Courier, monospace;
   letter-spacing: -.1em;
   justify-self: center;
+  white-space: nowrap;
 }
 
 header input[type="search"] {
@@ -44,7 +45,7 @@ header input[type="search"] {
   width: 100%;
   border-radius: 1rem;
   border: none;
-  background: var(--color-3) url(./media/icons/search.png) no-repeat right;
+  background: var(--color-4) url(./media/icons/search.png) no-repeat right;
   background-size: contain;
   box-shadow:
     inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
@@ -70,6 +71,7 @@ header input[type="search"] {
   padding: .5rem 1rem;
 } header input[type="search"]:placeholder-shown:hover:not(:focus) {
   background-color: white;
+  transition: none;
 }
   
 header button {
@@ -78,7 +80,7 @@ header button {
   gap: .5em;
   align-items: center;
   padding: .5rem 1rem;
-  background-color: #999;
+  background-color: var(--color-4);
   box-shadow:
   .25rem .25rem .5rem rgba(0, 0, 0, .75),
   inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
@@ -94,6 +96,7 @@ header button {
 } header button * {
   height: 1.25em;
   font-size: 1.5em;
+  white-space: nowrap;
 } header button:active * {
   transform: translate(.1rem, .1rem);
 }
@@ -171,8 +174,8 @@ main {
   border-radius: 50%;
   background-color: #bbb;
   box-shadow:
-    inset .1rem .1rem .5rem rgba(0, 0, 0, .75),
-    .1rem .1rem .25rem rgba(255, 255, 255, .1);
+    inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
+    .05rem .05rem .25rem rgba(255, 255, 255, .1);
   /* transition:
     box-shadow 100ms var(--delay),
     background-color 150ms var(--delay); */
@@ -211,8 +214,8 @@ main {
   content: "";
   background-color: royalblue;
   box-shadow: inset 0 1px 5px blue;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   clip-path: polygon(0 75%, 0 0, 100% 100%, 25% 100%);
 }
 .card.read::after {
