@@ -1,10 +1,4 @@
 :root {
-  /*https://www.colourlovers.com/palette/4881049/Field_Of_Gold*/
-  /* --color-1: #795C5F;
-  --color-2: #A69658;
-  --color-3: #D9B26F;
-  --color-4: #FADF7F;
-  --color-5: #F2E29F; */
   --color-1: #333;
   --color-2: #555;
   --color-3: #777;
@@ -28,23 +22,22 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10vw;
   background-color: var(--color-2);
   padding: .75rem;
-  /* filter: drop-shadow(0rem 0rem .5rem black); */
   box-shadow: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
 }
 
-h1 {
+header h1 {
   font-size: 2.5em;
   font-weight: 600;
   font-family: CoffeeTin, 'Courier New', Courier, monospace;
   letter-spacing: -.1em;
-  justify-self: right;
+  justify-self: center;
 }
 
-input[type="search"] {
+header input[type="search"] {
   --transition: ease-in-out 250ms;
   justify-self: left;
   width: 100%;
@@ -52,29 +45,56 @@ input[type="search"] {
   border: none;
   background: var(--color-3) url(./media/icons/search.png) no-repeat right;
   background-size: contain;
-  box-shadow: inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
+  box-shadow:
+    inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
     .25rem .25rem .25rem rgba(255, 255, 255, .25);
   padding: .5rem 3rem .5rem 1rem;
   font-size: 1.5em;
-  transition: box-shadow var(--transition),
+  transition:
+    box-shadow var(--transition),
     width var(--transition),
     background-color var(--transition),
     border-radius var(--transition) 150ms;
-} input[type="search"]:focus {
+} header input[type="search"]:focus {
   width: 100%;
   outline: none;
   background-color: var(--color-5);
   background-image: url(./media/icons/search-active.png);
-} input[type="search"]:placeholder-shown:not(:focus) {
-  box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .75),
-  inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+} header input[type="search"]:placeholder-shown:not(:focus) {
+  box-shadow:
+    .25rem .25rem .5rem rgba(0, 0, 0, .75),
+    inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
   width: 3rem;
   border-radius: 2rem;
   padding: .5rem 1rem;
-} input[type="search"]:placeholder-shown:hover:not(:focus) {
+} header input[type="search"]:placeholder-shown:hover:not(:focus) {
   background-color: white;
 }
-
+  
+header button {
+  justify-self: right;
+  display: flex;
+  gap: .5em;
+  align-items: center;
+  padding: .5rem 1rem;
+  background-color: #999;
+  box-shadow:
+  .25rem .25rem .5rem rgba(0, 0, 0, .75),
+  inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  border: none;
+  border-radius: 1rem;
+} header button:hover {
+  background-color: white;
+} header button:active {
+  box-shadow:
+  inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
+  .25rem .25rem .25rem rgba(255, 255, 255, .25);
+} header button * {
+  height: 1.25em;
+  font-size: 1.5em;
+} header button:active * {
+  transform: translate(.1rem, .1rem);
+}
 
 
 /* - - - created items related - - - */
@@ -84,7 +104,6 @@ main {
   display: grid;
   overflow-y: auto;
   background-color: var(--color-5);
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
   justify-content: space-around;
   grid-template-rows: repeat(auto-fill, minmax(450px, 1fr));
@@ -119,16 +138,10 @@ main {
     #888);
   border-radius: .3rem 1rem 1rem .3rem;
   box-shadow: .25rem .25rem .5rem #333;
-  /* border-right: 3px solid #333; */
-  /* border-bottom: 3px solid #333; */
   transition: filter ease-out 250ms;
-}
-/* card content, shared properties */
-.card * {
-  /* align-self: center; */
   text-align: center;
-  /* justify-self: center; */
 }
+/* card content */
 .title {
   grid-area: title;
   font-family: 'Times New Roman', Times, serif;
@@ -155,17 +168,23 @@ main {
   border: none;
   border-radius: 50%;
   background-color: #bbb;
-  box-shadow: inset .1rem .1rem .5rem rgba(0, 0, 0, .75),
+  box-shadow:
+    inset .1rem .1rem .5rem rgba(0, 0, 0, .75),
     .1rem .1rem .25rem rgba(255, 255, 255, .1);
-    transition: box-shadow 100ms var(--delay), background-color 150ms var(--delay);
-  } .edit:hover {
-  box-shadow: inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
+  transition:
+    box-shadow 100ms var(--delay),
+    background-color 150ms var(--delay);
+} .edit:hover {
+  box-shadow:
+    inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
     .1rem .1rem .25rem rgba(0, 0, 0, .5);
   background-color: #ddd;
 }
 .edit > img {
   width: 100%;
-  transition: width 200ms var(--delay), transform 50ms var(--delay);
+  transition:
+    width 200ms var(--delay),
+    transform 50ms var(--delay);
 }
 .edit:hover > img {
   width: 100%;
@@ -177,7 +196,8 @@ main {
 }
 .edit:active {
   background-color: #555;
-  box-shadow: inset .15rem .15rem .5rem rgba(0, 0, 0, .75),
+  box-shadow:
+    inset .15rem .15rem .5rem rgba(0, 0, 0, .75),
     .15rem .15rem .25rem rgba(255, 255, 255, .1);
 }
 
