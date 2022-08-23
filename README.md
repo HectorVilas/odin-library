@@ -160,7 +160,30 @@ function placeBooks() {
 It's not intuitive at all, but this is the way I learned to do it. I may change it for an easier to read `.innerHTML` in the future if it is possible.
 
 ### next steps
-
 I've been looking for info about modals (I wrongly called them prompts in the past) and it's really easy to use and tweak, so I'm going to make one for the book creation. On my personal projects I made modals in a "hacky way", this time I'm doing it right. I'm going to use all the knowledge I got from one of the previous practices, [forms](https://github.com/HectorVilas/odin-form), to make it look and feel good.
 
 Once I have a functional modal, I should keep working with the code. I have to make a `constructor` for books and let the modal set it's data.
+
+## update 4
+Today I've been working in the modal. I made it simple: the 3 necessary entries and a checkbox for "read". The rest of the work has been styling, to keep the aesthetics of the rest of the page. As a little extra, I used the property `backdrop-filter` to add a blur effect, now that it works on Firefox. Anyways, I used the `@supports` rule on `CSS` to replace it with a solid background in case the browser is not compatible. I'm not sure if I wrote it right, I don't have where to test it, now that it have support in all desktop browsers.
+
+```CSS
+@supports not (backdrop-filter: blur(1rem)) {
+  .modal-add-edit {
+    background: rgb(125, 125, 125);
+  }
+}
+```
+
+After this, I added two set of buttons: a pair for editing and another for adding. Those are visible for now:
+
+![](./READMEmd/progress05.png)
+
+A little of `JavaScript` has been written to make it possible to show and hide the modal. I had to look for the methods to show and hide it, then I remembered I can see all methods from the browser's inspector, under `prototype`. Next time I'm checking here before looking on internet.
+
+### next steps
+
+I'm planning to use the same modal for two actions, so I'm going to hide both sets and then show the relevant, depending on the context.
+
+### thoughts
+I noticed I always start styling everything once I have something on screen. I should leave that for later, because that's not the most important part. I must work on it.
