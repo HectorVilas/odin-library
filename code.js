@@ -10,7 +10,8 @@ const
   main = document.querySelector("main"),
   card = document.querySelector(".card"),
   modalBook = document.querySelector(".modal-add-edit"),
-  btnAddBook = document.querySelector(".btn-add-book");
+  btnAddBook = document.querySelector(".btn-add-book"),
+  btnModalClose = modalBook.querySelector(".close");
 
 
 
@@ -65,13 +66,18 @@ function placeBooks() {
 };
 
 function toggleModal() {
-  modalBook.toggleAttribute("open");
-}
+  if(this.className.includes("btn-add-book")) {
+    modalBook.showModal();
+  } else {
+    modalBook.close();
+  };
+};
 
 
 
 // - - - listeners - - -
 btnAddBook.addEventListener("click", toggleModal);
+btnModalClose.addEventListener("click", toggleModal);
 
 
 
