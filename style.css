@@ -233,6 +233,73 @@ main {
 }
 
 
+
+
+/* modal related */
+
+.modal-add-edit {
+  inset: 0;
+  width: 20rem;
+  font-size: 1.5em;
+  border-radius: 1rem;
+  border: none;
+  box-shadow:
+    .25rem .25rem .5rem rgba(0, 0, 0, .75),
+    inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  background: rgba(150, 150, 150, .5);
+  backdrop-filter: blur(1rem);
+}
+@supports not (backdrop-filter: blur(1rem)) {
+  .modal-add-edit {
+    background: rgb(125, 125, 125);
+  }
+}
+/* form */
+.modal-add-edit ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+.modal-add-edit input[type="text"],
+.modal-add-edit input[type="tel"] {
+  font-size: 1em;
+  background: none;
+  box-shadow:
+  inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
+  .05rem .05rem .25rem rgba(255, 255, 255, .05);
+}
+label:not(:last-child) {
+  font-weight: 800;
+}
+.modal-add-edit li:not(:last-of-type) {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.modal-add-edit li:last-of-type {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .25rem;
+  place-items: center left;
+}
+/* close button */
+.modal-add-edit .close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  aspect-ratio: 1/1;
+}
+/* bottom buttons */
+.modal-add-edit .buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-add-edit .buttons {
+  
+}
+
+
 /* for testing */
 
 ** {

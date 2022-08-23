@@ -21,5 +21,30 @@
   <main>
     <!-- generated cards here -->
   </main>
+  <dialog class="modal-add-edit">
+    <button class="close">X</button>
+    <ul>
+      <li>
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required>
+      </li>
+      <li>
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author">
+      </li>
+      <li>
+        <label for="pages">Number of pages</label>
+        <input type="tel" name="pages" id="pages">
+      </li>
+      <li>
+        <input type="checkbox" name="read" id="read">
+        <label for="read">Read</label>
+      </li>
+    </ul>
+    <div class="buttons">
+      <button>Save</button>
+      <button>Cancel</button>
+    </div>
+  </dialog>
 </body>
 </html>

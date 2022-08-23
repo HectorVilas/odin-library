@@ -8,8 +8,13 @@ let myLibrary = [
 
 const
   main = document.querySelector("main"),
-  card = document.querySelector(".card");
+  card = document.querySelector(".card"),
+  modalBook = document.querySelector(".modal-add-edit"),
+  btnAddBook = document.querySelector(".btn-add-book");
 
+
+
+// - - - constructors - - -
 
 function Book() {
     // the constructor...
@@ -18,6 +23,10 @@ function Book() {
 function addBookToLibrary() {
   // do stuff here
 };
+
+
+
+// - - - functions - - -
 
 function placeBooks() {
   main.innerHTML = "";
@@ -55,7 +64,16 @@ function placeBooks() {
   });
 };
 
+function toggleModal() {
+  modalBook.toggleAttribute("open");
+}
 
 
-//run on load
+
+// - - - listeners - - -
+btnAddBook.addEventListener("click", toggleModal);
+
+
+
+// - - - run on load - - -
 placeBooks();
