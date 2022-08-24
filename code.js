@@ -1,34 +1,61 @@
 let myLibrary = [
-  {title: "book 1", author: "author 1", pages: 100, read: false},
-  {title: "book 2", author: "author 2", pages: 200, read: true},
-  {title: "book 3", author: "author 3", pages: 300, read: false},
-  {title: "book 4", author: "author 4", pages: 400, read: false},
-  {title: "book 5", author: "author 5", pages: 500, read: false}
+  // {title: "book 1", author: "author 1", pages: 100, read: false},
+  // {title: "book 2", author: "author 2", pages: 200, read: true},
+  // {title: "book 3", author: "author 3", pages: 300, read: false},
+  // {title: "book 4", author: "author 4", pages: 400, read: false},
+  // {title: "book 5", author: "author 5", pages: 500, read: false}
 ];
 
 const
   main = document.querySelector("main"),
   card = document.querySelector(".card"),
-  modalBook = document.querySelector(".modal-add-edit"),
   btnAddBook = document.querySelector(".btn-add-book"),
-  btnModalClose = modalBook.querySelector(".close");
-
+  modalBook = document.querySelector(".modal-add-edit"),
+  //inputs
+  modalTitle = modalBook.querySelector("#title"),
+  modalAuthor = modalBook.querySelector("#author"),
+  modalPages = modalBook.querySelector("#pages"),
+  modalRead = modalBook.querySelector("#read"),
+  //buttons sets
+  modalBtnsAdding = modalBook.querySelector(".buttons.adding"),
+  modalBtnsEditing = modalBook.querySelector(".buttons.editing"),
+  //buttons
+  btnModalAllClose = modalBook.querySelectorAll(".close"),
+  btnModalAdd = modalBook.querySelector(".add"),
+  btnModalSave = modalBook.querySelector(".save"),
+  btnModalDelete = modalBook.querySelector(".delete");
 
 
 // - - - constructors - - -
 
-function Book() {
-    // the constructor...
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 };
 
-function addBookToLibrary() {
-  // do stuff here
-};
 
 
 
 // - - - functions - - -
 
+//
+function addBookToLibrary() {
+  let newBook = new Book(
+    modalTitle.value,
+    modalAuthor.value,
+    modalPages.value,
+    modalRead.checked
+  );
+  myLibrary.push(newBook);
+  //redraw
+  placeBooks();
+  //close modal menu
+  modalBook.close();
+};
+
+//place cards for each book in myLibrary, deleting the existing ones first
 function placeBooks() {
   main.innerHTML = "";
 
@@ -68,18 +95,30 @@ function placeBooks() {
 function toggleModal() {
   if(this.className.includes("btn-add-book")) {
     modalBook.showModal();
+    modalBtnsAdding.classList.remove("hidden");
+    modalTitle.value = "";
+    modalAuthor.value = "";
+    modalPages.value = "";
+    modalRead.checked = false;
   } else {
     modalBook.close();
   };
 };
 
+function hideModalButtons() {
+  [modalBtnsAdding, modalBtnsEditing].forEach(sets => {
+    sets.classList.add("hidden");
+  });
+};
 
 
 // - - - listeners - - -
 btnAddBook.addEventListener("click", toggleModal);
-btnModalClose.addEventListener("click", toggleModal);
-
-
+btnModalAllClose.forEach(btn => {
+  btn.addEventListener("click", toggleModal);
+}) 
+btnModalAdd.addEventListener("click", addBookToLibrary);
+modalBook.addEventListener("close", hideModalButtons);
 
 // - - - run on load - - -
 placeBooks();
