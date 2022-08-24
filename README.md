@@ -187,3 +187,19 @@ I'm planning to use the same modal for two actions, so I'm going to hide both se
 
 ### thoughts
 I noticed I always start styling everything once I have something on screen. I should leave that for later, because that's not the most important part. I must work on it.
+
+## update 5
+I just wrote the constructor function and made the modal's inputs fill the info. About the two pairs of buttons on it, they are hidden by default. As the function to show the modal came from the "Add a book" button, the relevant pair is showed. When the modal is closed (by book added, pressed the esc key or any other way), all the buttons are hidden again.
+
+If a book has been added, after pushing the new object to the array containing them, the cards will be redrawn. I don't know if this is a lazy way to do it, but for now it works flawlessly and no errors can be commited.
+
+Here is a little GIF adding two books to the list:
+
+![](READMEmd/progress06.gif)
+
+### next steps
+It's time to make something with the empty state. I should be able to do something with `CSS` only, maybe with `main:empty`, adding a background image with some draws, text and an arrow pointing to the "Add a book" button.
+
+Something else I should do, to finish this practice, is letting the user edit the existing books, to change it's info or delete it.
+
+Another thing I was thinking is using `<form>` and focusing the first input field, so the book can be created without any mouse interaction.
