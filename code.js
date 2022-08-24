@@ -40,7 +40,7 @@ function Book(title, author, pages, read) {
 
 // - - - functions - - -
 
-//
+//book constructor
 function addBookToLibrary() {
   let newBook = new Book(
     modalTitle.value,
@@ -92,6 +92,7 @@ function placeBooks() {
   });
 };
 
+//show/hide modal and it's button depending context
 function toggleModal() {
   if(this.className.includes("btn-add-book")) {
     modalBook.showModal();
@@ -100,11 +101,12 @@ function toggleModal() {
     modalAuthor.value = "";
     modalPages.value = "";
     modalRead.checked = false;
-  } else {
+  } else if(this.className.includes("close")) {
     modalBook.close();
   };
 };
 
+//hide buttons so only relevants can be shown when open
 function hideModalButtons() {
   [modalBtnsAdding, modalBtnsEditing].forEach(sets => {
     sets.classList.add("hidden");
@@ -120,5 +122,3 @@ btnModalAllClose.forEach(btn => {
 btnModalAdd.addEventListener("click", addBookToLibrary);
 modalBook.addEventListener("close", hideModalButtons);
 
-// - - - run on load - - -
-placeBooks();
