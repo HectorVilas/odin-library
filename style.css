@@ -308,20 +308,30 @@ label:not(:last-child) {
   background-color: orangered;
 }
 /* close button */
-.modal-add-edit .close {
+.modal-add-edit > .close {
   position: absolute;
   right: 1rem;
   top: 1rem;
   padding: 0;
-  width: 2rem;
+  width: 1.5rem;
+  font-size: 1rem;
   margin: 0;
-  /* aspect-ratio: 1/1; */
+  font-family: cursive, 'Courier New', Courier, monospace;
+  aspect-ratio: 1/1;
   background-color: #888;
 } .modal-add-edit .close:hover {
   background-color: #aaa;
 } .modal-add-edit .close:active {
   background-color: #888;
 }
+
+
+/* for general use */
+.hidden {
+  display: none !important;
+}
+
+
 
 /* for testing */
 
