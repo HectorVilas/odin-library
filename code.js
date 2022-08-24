@@ -1,10 +1,4 @@
-let myLibrary = [
-  // {title: "book 1", author: "author 1", pages: 100, read: false},
-  // {title: "book 2", author: "author 2", pages: 200, read: true},
-  // {title: "book 3", author: "author 3", pages: 300, read: false},
-  // {title: "book 4", author: "author 4", pages: 400, read: false},
-  // {title: "book 5", author: "author 5", pages: 500, read: false}
-];
+let myLibrary = [];
 
 const
   main = document.querySelector("main"),
@@ -28,6 +22,7 @@ const
 
 // - - - constructors - - -
 
+//book constructor
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -37,10 +32,9 @@ function Book(title, author, pages, read) {
 
 
 
-
 // - - - functions - - -
 
-//book constructor
+//adds a new book to myLibrary, then shows all books on page
 function addBookToLibrary() {
   let newBook = new Book(
     modalTitle.value,
@@ -54,6 +48,15 @@ function addBookToLibrary() {
   //close modal menu
   modalBook.close();
 };
+
+//edit or delete existing book in myLibrary
+function edditBookOnLibrary() {
+  if(this.className.includes("save")){
+    console.log("must save");
+  } else if(this.className.includes("delete")){
+    console.log("must delete");
+  };
+}
 
 //place cards for each book in myLibrary, deleting the existing ones first
 function placeBooks() {
@@ -83,6 +86,9 @@ function placeBooks() {
     card.appendChild(pages);
     const edit = document.createElement("button");
     edit.classList.add("edit");
+
+    edit.addEventListener("click", toggleModal);
+
     const image = document.createElement("img");
     image.src = "./media/icons/edit.png";
     edit.appendChild(image);
@@ -94,15 +100,26 @@ function placeBooks() {
 
 //show/hide modal and it's button depending context
 function toggleModal() {
-  if(this.className.includes("btn-add-book")) {
+  //add book
+  if(this.className.includes("btn-add-book")) { 
     modalBook.showModal();
     modalBtnsAdding.classList.remove("hidden");
     modalTitle.value = "";
     modalAuthor.value = "";
     modalPages.value = "";
     modalRead.checked = false;
-  } else if(this.className.includes("close")) {
+    //close modal, no changes
+  } else if(this.className.includes("close")) { 
     modalBook.close();
+    //edit book
+  } else {
+    const idx = this.parentNode.getAttribute("data-index");
+    modalBook.showModal();
+    modalBtnsEditing.classList.remove("hidden");
+    modalTitle.value = myLibrary[idx].title;
+    modalAuthor.value = myLibrary[idx].author;
+    modalPages.value = myLibrary[idx].pages;
+    modalRead.checked = myLibrary[idx].read;
   };
 };
 
@@ -121,4 +138,7 @@ btnModalAllClose.forEach(btn => {
 }) 
 btnModalAdd.addEventListener("click", addBookToLibrary);
 modalBook.addEventListener("close", hideModalButtons);
+[btnModalSave,btnModalDelete].forEach(btn => {
+  btn.addEventListener("click", edditBookOnLibrary);
+});
 
