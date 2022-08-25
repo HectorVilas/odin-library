@@ -54,12 +54,18 @@ function addBookToLibrary() {
 
 //edit or delete existing book in myLibrary
 function edditBookOnLibrary() {
-  //TODO: get value from data-index
   if(this.className.includes("save")){
-    console.log("must save");
+    myLibrary[idx].title = modalTitle.value;
+    myLibrary[idx].author = modalAuthor.value;
+    myLibrary[idx].pages = modalPages.value;
+    myLibrary[idx].read = modalRead.checked;
+
   } else if(this.className.includes("delete")){
-    console.log("must delete");
+    myLibrary = myLibrary.filter((item, i) => i != idx);
   };
+  //place cards again and close modal
+  placeBooks();
+  modalBook.close();
 }
 
 //place cards for each book in myLibrary, deleting the existing ones first
