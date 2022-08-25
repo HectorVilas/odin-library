@@ -1,5 +1,8 @@
 let myLibrary = [];
 
+//store globally the index for editing/deleting existing card
+let idx;
+
 const
   main = document.querySelector("main"),
   card = document.querySelector(".card"),
@@ -51,6 +54,7 @@ function addBookToLibrary() {
 
 //edit or delete existing book in myLibrary
 function edditBookOnLibrary() {
+  //TODO: get value from data-index
   if(this.className.includes("save")){
     console.log("must save");
   } else if(this.className.includes("delete")){
@@ -113,7 +117,7 @@ function toggleModal() {
     modalBook.close();
     //edit book
   } else {
-    const idx = this.parentNode.getAttribute("data-index");
+    idx = this.parentNode.getAttribute("data-index");
     modalBook.showModal();
     modalBtnsEditing.classList.remove("hidden");
     modalTitle.value = myLibrary[idx].title;
