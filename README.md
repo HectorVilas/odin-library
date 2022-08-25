@@ -203,3 +203,54 @@ It's time to make something with the empty state. I should be able to do somethi
 Something else I should do, to finish this practice, is letting the user edit the existing books, to change it's info or delete it.
 
 Another thing I was thinking is using `<form>` and focusing the first input field, so the book can be created without any mouse interaction.
+
+## update 6
+The page is now functional, except for the search and there's no responsiveness yet.
+
+![](READMEmd/progress07.gif)
+
+The first change I did was remove the CofeeTin font, because I was receiving errors in the console. After a little search I found this font in particular have some problems and had to be fixed using third party software. I decided to just remove the font, it was hard to read anyways.
+
+Then i've been adding comments on top of the functions to describe what it does, in case I forget in the future, or somebody else wants to read it.
+
+Next, I worked in the edit menu. It's the same modal, but if it was invoked with an edit button, it will show the relevant buttons, autofill the input fields and check or uncheck the checkbox. It will also store the index of the selected book in a global array, so it can know which one is being modified or deleted.
+
+Pressing "save" will replace the book's info with the new data, finding it with the index saved in the global variable. Pressing "delete" will remove it. To remove the book, I used the `.filter()` method.
+
+```javascript
+//store globally the index for editing/deleting existing card
+let idx;
+
+//...
+
+[btnModalSave,btnModalDelete].forEach(btn => {
+  btn.addEventListener("click", edditBookOnLibrary);
+});
+
+//...
+
+//edit or delete existing book in myLibrary
+function edditBookOnLibrary() {
+  //...
+  } else if(this.className.includes("delete")){
+    myLibrary = myLibrary.filter((item, i) => i != idx);
+  };
+  //...
+}
+```
+
+I find this way much faster and intuitive than `.slice()` and other methods. The parameter "item" is not used, but can't ve ommited.
+
+### next steps
+I should change the "delete" hover color, it souldn't be green. I'm also planning to add more styles to the page, or at least a toggleable minimalist design. I don't know where to put this button or checkbox, because the page doesn't have a navigation bar (it was too simplistic to have one).
+
+I also have to work in the search. It's not part of the practice, but I put it up there, so I should make it functional. It should filter the books' array and then show on the page those matching the search, or maybe grayout those that doesn't match. I think the former is the better option.
+
+I was also thinking to match the input length of the search bar when unfocus, using the `ch` unit for the length. I heard something like this was sugested for the next W3C, I hope they normalize a property for this, but for now I'll have to use `JavaScript`.
+
+I still have to design something for the empty state of the page.
+
+### thoughts
+I feel like I'm not learning too much from this practice, maybe because I learned most of this from my other personal projects. I want to move on already. Once the search bar is functional, the project is over, unles I came with a new idea.
+
+I also need to come up with better class and function names. Most days I watch some frontend videos (tutorials, tips and tricks), I love to learn little new things, and started noticing how easy to understand are the naming those devs use for everything. My naming is not always obvious, so I should work on it for my next project.
