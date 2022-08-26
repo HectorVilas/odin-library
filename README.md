@@ -230,7 +230,7 @@ let idx;
 //...
 
 //edit or delete existing book in myLibrary
-function edditBookOnLibrary() {
+function editBookOnLibrary() {
   //...
   } else if(this.className.includes("delete")){
     myLibrary = myLibrary.filter((item, i) => i != idx);
@@ -239,14 +239,14 @@ function edditBookOnLibrary() {
 }
 ```
 
-I find this way much faster and intuitive than `.slice()` and other methods. The parameter "item" is not used, but can't ve ommited.
+I find this way much faster and intuitive than `.slice()` and other methods. The parameter "item" is not used, but can't be omitted.
 
 ### next steps
 I should change the "delete" hover color, it souldn't be green. I'm also planning to add more styles to the page, or at least a toggleable minimalist design. I don't know where to put this button or checkbox, because the page doesn't have a navigation bar (it was too simplistic to have one).
 
 I also have to work in the search. It's not part of the practice, but I put it up there, so I should make it functional. It should filter the books' array and then show on the page those matching the search, or maybe grayout those that doesn't match. I think the former is the better option.
 
-I was also thinking to match the input length of the search bar when unfocus, using the `ch` unit for the length. I heard something like this was sugested for the next W3C, I hope they normalize a property for this, but for now I'll have to use `JavaScript`.
+I was also thinking to match the input width of the search bar when unfocus, using the `ch` unit for the length. I heard something like this was sugested for the next W3C, I hope they normalize a property for this, but for now I'll have to use `JavaScript`.
 
 I still have to design something for the empty state of the page.
 
@@ -254,3 +254,17 @@ I still have to design something for the empty state of the page.
 I feel like I'm not learning too much from this practice, maybe because I learned most of this from my other personal projects. I want to move on already. Once the search bar is functional, the project is over, unles I came with a new idea.
 
 I also need to come up with better class and function names. Most days I watch some frontend videos (tutorials, tips and tricks), I love to learn little new things, and started noticing how easy to understand are the naming those devs use for everything. My naming is not always obvious, so I should work on it for my next project.
+
+## update 7
+Today I've been working in the visuals. First of all, I changed the color palette to make the page look like Windows XP. I also added a Windows XP wallpaper from [wallpapercave.com](https://wallpapercave.com/w/wp2754869) to complete the look.
+
+![](READMEmd/progress08.png)
+
+Then, just in case, I moved all the colors and shadows to variables in `:root`, so I have everything in a single place. Easier to change, easier to repeat values and, in case I want to make a dark or minimalistic theme, I just have to change those values.
+
+And finally I made little changes in the code. I added a condition to prevent creating books without a title. If the user tries to create or edit a book without title, the modal won't disappear and the title input will flash a little. Also this input field now have autofocus, making hard to miss the title. The cards can still be created without author or number of pages. "by" and "pages" was always showing, so I added an extra condition to not show them in case their respective inputs are empty.
+
+### next steps
+I need to work in two more things before finishing the practice:
+- books are still grayscale. Now the page is a little colorful, so I should do something with that. ¿Let the user pick a color? ¿A random color for each book? I don't know yet.
+- the search bar is still not functional and everyday feels a little more intimidating. I should finally "face this demon" and let it filter the books. Should be easy, but I still don't have planned my approach. I can make it search books, include authors or maybe apply some regEx magic and let it search the way Visual Studio searchs  in the intelliCode (the suggestion boxes), in which I could type "ader" and it will show "`ad`d`E`ventListene`r`".
