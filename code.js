@@ -39,6 +39,13 @@ function Book(title, author, pages, read) {
 
 //adds a new book to myLibrary, then shows all books on page
 function addBookToLibrary() {
+  if(modalTitle.value.length === 0) {
+    modalTitle.classList.add("no-title");
+    setTimeout(() => {
+      modalTitle.classList.remove("no-title");
+    }, 1000); 
+    return;
+  }
   let newBook = new Book(
     modalTitle.value,
     modalAuthor.value,
@@ -54,6 +61,10 @@ function addBookToLibrary() {
 
 //edit or delete existing book in myLibrary
 function edditBookOnLibrary() {
+  if(modalTitle.value.length === 0) {
+    modalTitle.classList.add("no-title");
+    return;
+  };
   if(this.className.includes("save")){
     myLibrary[idx].title = modalTitle.value;
     myLibrary[idx].author = modalAuthor.value;
@@ -84,15 +95,17 @@ function placeBooks() {
     title.classList.add("title");
     title.innerText = book.title;
     card.appendChild(title);
+
+    title.addEventListener("transitionend", title.classList.remove("no-title"))
     
     const author = document.createElement("p");
     author.classList.add("author");
-    author.innerText = `by ${book.author}`;
+    book.author.length > 0 ? author.innerText = `by ${book.author}` : author.innerText = "";
     card.appendChild(author);
 
     const pages = document.createElement("p");
     pages.classList.add("pages");
-    pages.innerText = `${book.pages} pages`;
+    book.pages.length > 0 ? pages.innerText = `${book.pages} pages` : pages.innerText = "";
     card.appendChild(pages);
     const edit = document.createElement("button");
     edit.classList.add("edit");

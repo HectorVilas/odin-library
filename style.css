@@ -283,7 +283,6 @@ main {
   font-size: 1em;
   background: none;
   box-shadow: var(--box-shadow-input);
-  
 }
 label:not(:last-child) {
   font-weight: 800;
@@ -298,6 +297,21 @@ label:not(:last-child) {
   grid-template-columns: auto 1fr;
   gap: .25rem;
   place-items: center left;
+}
+.modal-add-edit #title.no-title {
+  animation: pulse 500ms;
+}
+@keyframes pulse {
+  0%, 50%, 100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  25%, 75% {
+    background-color: rgba(0, 0, 0, .25);
+  }
+}
+.modal-add-edit #title:placeholder-shown {
+  outline-offset: .25rem;
+  outline-color: royalblue;
 }
 
 /* bottom buttons */
