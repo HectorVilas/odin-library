@@ -13,10 +13,13 @@
   --color-5: orangered;
   --color-5-light: orange;
   --color-5-dark: red;
+
   --color-scrollbar-1: #666;
   --color-scrollbar-2: #333;
+
   --color-ribbon: royalblue;
   --color-ribbon-dark: darkblue;
+
   --box-shadow-1-in:
     inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
     .25rem .25rem .25rem rgba(255, 255, 255, .25);
@@ -35,9 +38,15 @@
   --box-shadow-input:
     inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
     .05rem .05rem .25rem rgba(255, 255, 255, .05);
+  
   --shadow-header: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
   --shadow-card: .25rem .25rem .5rem #333;
   --shadow-ribbon: inset 0 1px 5px rgba(0, 0, 0,.70);
+  
+  --card-gradient: linear-gradient(to right,
+    #444 0,#555 .25rem,#555 .5rem,#444 1rem,#444 1.25rem, /*spine*/
+    #777 1.5rem,#888 1.5rem,#888 /*cover*/
+  );
 }
 
 body {
@@ -153,15 +162,7 @@ main {
   place-items: center;
   padding: 1.5rem 1.5rem 1.5rem 2rem;
   gap: 1.5rem;
-  background: linear-gradient(to right,
-    #444 0,
-    #555 .25rem,
-    #555 .5rem,
-    #444 1rem,
-    #444 1.25rem,
-    #777 1.5rem,
-    #888 1.5rem,
-    #888);
+  background: var(--card-gradient);
   border-radius: .3rem 1rem 1rem .3rem;
   box-shadow: var(--shadow-card);
   /* transition: filter ease-out 250ms; */
