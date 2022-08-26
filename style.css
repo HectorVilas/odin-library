@@ -17,6 +17,27 @@
   --color-scrollbar-2: #333;
   --color-ribbon: royalblue;
   --color-ribbon-dark: darkblue;
+  --box-shadow-1-in:
+    inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
+    .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  --box-shadow-1-out:
+    .25rem .25rem .5rem rgba(0, 0, 0, .75),
+    inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  --box-shadow-edit:
+  inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
+  .05rem .05rem .25rem rgba(255, 255, 255, .1);
+  --box-shadow-edit-out:
+  inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
+  .1rem .1rem .25rem rgba(0, 0, 0, .5);
+  --box-shadow-edit-in:
+    inset .15rem .15rem .5rem rgba(0, 0, 0, .75),
+    .15rem .15rem .25rem rgba(255, 255, 255, .1);
+  --box-shadow-input:
+    inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
+    .05rem .05rem .25rem rgba(255, 255, 255, .05);
+  --shadow-header: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
+  --shadow-card: .25rem .25rem .5rem #333;
+  --shadow-ribbon: inset 0 1px 5px rgba(0, 0, 0,.70);
 }
 
 body {
@@ -33,7 +54,7 @@ header {
   gap: 1rem;
   background: linear-gradient(to top, var(--color-1-dark) 0, var(--color-1) 60%);
   padding: .75rem 5vw;
-  box-shadow: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
+  box-shadow: var(--shadow-header);
 }
 
 header h1 {
@@ -52,9 +73,7 @@ header input[type="search"] {
   border: none;
   background: var(--color-3) url(./media/icons/search.png) no-repeat right;
   background-size: contain;
-  box-shadow:
-    inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
-    .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-in);
   padding: .25rem 3rem .25rem 1rem;
   font-size: 1.25em;
   transition:
@@ -68,9 +87,7 @@ header input[type="search"] {
   background-color: var(--color-3-light);
   background-image: url(./media/icons/search-active.png);
 } header input[type="search"]:placeholder-shown:not(:focus) {
-  box-shadow:
-    .25rem .25rem .5rem rgba(0, 0, 0, .75),
-    inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-out);
   width: 3rem;
   border-radius: 2rem;
   padding: .5rem 1rem;
@@ -87,17 +104,13 @@ header button {
   align-items: center;
   padding: .5rem 1rem;
   background-color: var(--color-2);
-  box-shadow:
-  .25rem .25rem .5rem rgba(0, 0, 0, .75),
-  inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-out);
   border: none;
   border-radius: 1rem;
 } header button:hover {
   background-color: var(--color-2-light);
 } header button:active {
-  box-shadow:
-  inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
-  .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-in);
   background-color: var(--color-2-dark);
 } header button * {
   height: 1.25em;
@@ -150,7 +163,7 @@ main {
     #888 1.5rem,
     #888);
   border-radius: .3rem 1rem 1rem .3rem;
-  box-shadow: .25rem .25rem .5rem #333;
+  box-shadow: var(--shadow-card);
   /* transition: filter ease-out 250ms; */
   text-align: center;
 }
@@ -181,16 +194,12 @@ main {
   border: none;
   border-radius: 50%;
   background-color: var(--color-4);
-  box-shadow:
-    inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
-    .05rem .05rem .25rem rgba(255, 255, 255, .1);
+  box-shadow: var(--box-shadow-edit);
   /* transition:
     box-shadow 100ms var(--delay),
     background-color 150ms var(--delay); */
 } .card .edit:hover {
-  box-shadow:
-    inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
-    .1rem .1rem .25rem rgba(0, 0, 0, .5);
+  box-shadow: var(--box-shadow-edit-out);
   background-color: var(--color-4-light);
 }
 .card .edit > img {
@@ -209,9 +218,7 @@ main {
 }
 .card .edit:active {
   background-color: var(--color-4-dark);
-  box-shadow:
-    inset .15rem .15rem .5rem rgba(0, 0, 0, .75),
-    .15rem .15rem .25rem rgba(255, 255, 255, .1);
+  box-shadow: var(--box-shadow-edit-in);
 }
 
 /* card read ribbon */
@@ -221,7 +228,7 @@ main {
   left: 0;
   content: "";
   background-color: var(--color-ribbon);
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0,.70);
+  box-shadow: var(--shadow-ribbon);
   width: 110px;
   height: 110px;
   clip-path: polygon(0 75%, 0 0, 100% 100%, 25% 100%);
@@ -250,9 +257,7 @@ main {
   font-size: 1.5em;
   border-radius: 1rem;
   border: none;
-  box-shadow:
-    .25rem .25rem .5rem rgba(0, 0, 0, .75),
-    inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-out);
   background: rgba(150, 150, 150, .5);
   backdrop-filter: blur(1rem);
 }
@@ -262,7 +267,7 @@ main {
   }
 }
 .modal-add-edit::backdrop {
-  box-shadow: inset 0 0 5rem black;
+  box-shadow: inset 0 0 5rem black; /*can't be moved to variable*/
   backdrop-filter: blur(.25rem);
 }
 /* form */
@@ -276,9 +281,8 @@ main {
 .modal-add-edit input[type="tel"] {
   font-size: 1em;
   background: none;
-  box-shadow:
-  inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
-  .05rem .05rem .25rem rgba(255, 255, 255, .05);
+  box-shadow: var(--box-shadow-input);
+  
 }
 label:not(:last-child) {
   font-weight: 800;
@@ -307,16 +311,12 @@ label:not(:last-child) {
   padding: .5rem 2rem;
   border: none;
   border-radius: .75rem;
-  box-shadow:
-  .25rem .25rem .5rem rgba(0, 0, 0, .75),
-  inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-out);
 } .modal-add-edit button:hover {
   background-color: var(--color-2-light);
 } .modal-add-edit button:active {
   background-color: var(--color-2-dark);
-  box-shadow:
-    inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
-    .25rem .25rem .25rem rgba(255, 255, 255, .25);
+  box-shadow: var(--box-shadow-1-in);
 }
 .modal-add-edit .delete {
   background-color: var(--color-5);
