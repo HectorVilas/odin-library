@@ -1,9 +1,22 @@
 :root {
-  --color-1: #333;
-  --color-2: #555;
-  --color-3: #777;
-  --color-4: #999;
-  --color-5: #aaa;
+  --color-1: hsl(215, 70%, 50%);
+  --color-1-dark: hsl(215, 70%, 30%);
+  --color-2: hsl(115, 70%, 35%);
+  --color-2-light: hsl(115, 70%, 45%);
+  --color-2-dark: hsl(115, 50%, 30%);
+  --color-3: hsl(215, 70%, 70%);
+  --color-3-light: hsl(215, 70%, 80%);
+  --color-3-dark: hsl(215, 70%, 60%);
+  --color-4: #aaa;
+  --color-4-light: #ccc;
+  --color-4-dark: #777;
+  --color-5: orangered;
+  --color-5-light: orange;
+  --color-5-dark: red;
+  --color-scrollbar-1: #666;
+  --color-scrollbar-2: #333;
+  --color-ribbon: royalblue;
+  --color-ribbon-dark: darkblue;
 }
 
 body {
@@ -18,7 +31,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  background: linear-gradient(to top, var(--color-2) 0, #888 60%);
+  background: linear-gradient(to top, var(--color-1-dark) 0, var(--color-1) 60%);
   padding: .75rem 5vw;
   box-shadow: inset 0 -.25rem .5rem rgba(0, 0, 0, .5);
 }
@@ -37,7 +50,7 @@ header input[type="search"] {
   width: 100%;
   border-radius: 1rem;
   border: none;
-  background: var(--color-4) url(./media/icons/search.png) no-repeat right;
+  background: var(--color-3) url(./media/icons/search.png) no-repeat right;
   background-size: contain;
   box-shadow:
     inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
@@ -52,7 +65,7 @@ header input[type="search"] {
 } header input[type="search"]:focus {
   width: 100%;
   outline: none;
-  background-color: var(--color-5);
+  background-color: var(--color-3-light);
   background-image: url(./media/icons/search-active.png);
 } header input[type="search"]:placeholder-shown:not(:focus) {
   box-shadow:
@@ -62,7 +75,7 @@ header input[type="search"] {
   border-radius: 2rem;
   padding: .5rem 1rem;
 } header input[type="search"]:placeholder-shown:hover:not(:focus) {
-  background-color: white;
+  background-color: var(--color-3-light);
   transition: none;
   cursor: context-menu;
 }
@@ -73,19 +86,19 @@ header button {
   gap: .5em;
   align-items: center;
   padding: .5rem 1rem;
-  background-color: var(--color-4);
+  background-color: var(--color-2);
   box-shadow:
   .25rem .25rem .5rem rgba(0, 0, 0, .75),
   inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
   border: none;
   border-radius: 1rem;
 } header button:hover {
-  background-color: white;
+  background-color: var(--color-2-light);
 } header button:active {
   box-shadow:
   inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
   .25rem .25rem .25rem rgba(255, 255, 255, .25);
-  background-color: #555;
+  background-color: var(--color-2-dark);
 } header button * {
   height: 1.25em;
   font-size: 1.5em;
@@ -101,7 +114,8 @@ header button {
 main {
   display: grid;
   overflow-y: auto;
-  background-color: var(--color-5);
+  background: url(./media/images/wallpapers/windows-xp.jpg) no-repeat hsl(200, 60%, 45%) center;
+  background-size: cover;
   grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
   justify-content: space-around;
   /* grid-template-rows: repeat(auto-fill, minmax(450px, 1fr)); */
@@ -110,7 +124,7 @@ main {
   gap: 2rem;
   padding: 1rem;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-1) var(--color-3);
+  scrollbar-color: var(--color-scrollbar-1) var(--color-scrollbar-2);
 }
 
 /* card design */
@@ -166,7 +180,7 @@ main {
   aspect-ratio: 1/1;
   border: none;
   border-radius: 50%;
-  background-color: #bbb;
+  background-color: var(--color-4);
   box-shadow:
     inset .05rem .05rem .5rem rgba(0, 0, 0, .75),
     .05rem .05rem .25rem rgba(255, 255, 255, .1);
@@ -177,7 +191,7 @@ main {
   box-shadow:
     inset .1rem .1rem .5rem rgba(255, 255, 255, .1),
     .1rem .1rem .25rem rgba(0, 0, 0, .5);
-  background-color: #ddd;
+  background-color: var(--color-4-light);
 }
 .card .edit > img {
   width: 100%;
@@ -194,7 +208,7 @@ main {
   transform: translate(.05rem, .05rem);
 }
 .card .edit:active {
-  background-color: #555;
+  background-color: var(--color-4-dark);
   box-shadow:
     inset .15rem .15rem .5rem rgba(0, 0, 0, .75),
     .15rem .15rem .25rem rgba(255, 255, 255, .1);
@@ -206,15 +220,15 @@ main {
   bottom: 0;
   left: 0;
   content: "";
-  background-color: royalblue;
-  box-shadow: inset 0 1px 5px blue;
+  background-color: var(--color-ribbon);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0,.70);
   width: 110px;
   height: 110px;
   clip-path: polygon(0 75%, 0 0, 100% 100%, 25% 100%);
 }
 .card.read::after {
   content: "READ";
-  color: darkblue;
+  color: var(--color-ribbon-dark);
   text-shadow: 1px 1px 2px rgb(125, 200, 255);
   font-weight: 600;
   position: absolute;
@@ -288,7 +302,7 @@ label:not(:last-child) {
 }
 .modal-add-edit button {
   margin: 1rem;
-  background: green;
+  background-color: var(--color-2);
   font-size: 1em;
   padding: .5rem 2rem;
   border: none;
@@ -297,15 +311,19 @@ label:not(:last-child) {
   .25rem .25rem .5rem rgba(0, 0, 0, .75),
   inset .25rem .25rem .25rem rgba(255, 255, 255, .25);
 } .modal-add-edit button:hover {
-  background-color: rgb(0, 200, 0);
+  background-color: var(--color-2-light);
 } .modal-add-edit button:active {
-  background-color: green;
+  background-color: var(--color-2-dark);
   box-shadow:
     inset .25rem .25rem .5rem rgba(0, 0, 0, .75),
     .25rem .25rem .25rem rgba(255, 255, 255, .25);
 }
 .modal-add-edit .delete {
-  background-color: orangered;
+  background-color: var(--color-5);
+} .modal-add-edit .delete:hover {
+  background-color: var(--color-5-light);
+} .modal-add-edit .delete:active {
+  background-color: var(--color-5-dark);
 }
 /* close button */
 .modal-add-edit > .close {
@@ -318,11 +336,11 @@ label:not(:last-child) {
   margin: 0;
   font-family: cursive, 'Courier New', Courier, monospace;
   aspect-ratio: 1/1;
-  background-color: #888;
+  background-color: var(--color-4);
 } .modal-add-edit .close:hover {
-  background-color: #aaa;
+  background-color: var(--color-4-light);
 } .modal-add-edit .close:active {
-  background-color: #888;
+  background-color: var(--color-4-dark);
 }
 
 
