@@ -1,4 +1,27 @@
-let myLibrary = [];
+let myLibrary = [
+  //this is a placeholder with top sellers, for testing
+  {title:"Harry Potter and the Sorcerer's Stone",author:"J.K. Rowling",pages:"",read:false},
+  {title:"The Hunger Games",author:"Suzanne Collins",pages:"",read:false},
+  {title:"Twilight",author:"Stephenie Meyer",pages:"",read:false},
+  {title:"To Kill A Mockingbird",author:"Harper Lee",pages:"",read:false},
+  {title:"The Great Gatsby",author:"F. Scott Fitzgerald",pages:"",read:false},
+  {title:"The Fault in Our Stars",author:"John Green",pages:"",read:false},
+  {title:"1984",author:"George Orwell",pages:"",read:false},
+  {title:"Pride and Prejudice",author:"Jane Austen",pages:"",read:false},
+  {title:"Divergent",author:"Veronica Roth",pages:"",read:false},
+  {title:"Harry Potter and the Prisoner of Azkaban",author:"J.K. Rowling",pages:"",read:false},
+  {title:"The Hobbit",author:"J.R.R. Tolkien",pages:"",read:false},
+  {title:"Harry Potter and the Deathly Hallows",author:"J.K. Rowling",pages:"",read:false},
+  {title:"Animal Farm",author:"George Orwell",pages:"",read:false},
+  {title:"The Diary of a Young Girl",author:"Anne Frank",pages:"",read:false},
+  {title:"Harry Potter and the Chamber of Secrets",author:"J.K. Rowling",pages:"",read:false},
+  {title:"The Catcher in the Rye",author:"J.D. Salinger",pages:"",read:false},
+  {title:"Harry Potter and the Goblet of Fire",author:"J.K. Rowling",pages:"",read:false},
+  {title:"Angels & Demons",author:"Dan Brown",pages:"",read:false},
+  {title:"The Girl with the Dragon Tattoo",author:"Stieg Larsson",pages:"",read:false},
+  {title:"Catching Fire",author:"Suzanne Collins",pages:"",read:false},
+  // {title:"",author:"",pages:"",read:false},
+];
 
 //store globally the index for editing/deleting existing card
 let idx;
@@ -174,3 +197,8 @@ modalBook.addEventListener("close", hideModalButtons);
   btn.addEventListener("click", edditBookOnLibrary);
 });
 
+
+
+//for testing
+placeBooks();
+emptyState();
