@@ -198,9 +198,13 @@ function emptyState() {
 //filter list on each keypress in the search ba
 function filter() {
   if(this.value.length > 0){
+    let searchInput = this.value.toLowerCase();
     searchList = [];
     myLibrary.forEach(book => {
-      if(book.title.includes(this.value) || book.author.includes(this.value)) searchList.push(book);
+      if(book.title.toLowerCase().includes(searchInput)
+        || book.author.toLowerCase().includes(searchInput)) {
+        searchList.push(book)
+      };
     });
     placeBooks("search");
     searchList = [];
