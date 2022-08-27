@@ -268,3 +268,20 @@ And finally I made little changes in the code. I added a condition to prevent cr
 I need to work in two more things before finishing the practice:
 - books are still grayscale. Now the page is a little colorful, so I should do something with that. ¿Let the user pick a color? ¿A random color for each book? I don't know yet.
 - the search bar is still not functional and everyday feels a little more intimidating. I should finally "face this demon" and let it filter the books. Should be easy, but I still don't have planned my approach. I can make it search books, include authors or maybe apply some regEx magic and let it search the way Visual Studio searchs  in the intelliCode (the suggestion boxes), in which I could type "ader" and it will show "`ad`d`E`ventListene`r`".
+
+## update 8
+I've been working in the checkbox style. I was having problems trying to hide the original design, so I had to check [this article](https://moderncss.dev/pure-css-custom-checkbox-style/) for a little help. I just followed some of the first steps to hide the necessary. After some styling, and applying a `cubic-bezier` with the help of Firefox's Inspector. I like how it looks, the new design now fits with the page's., this is the result:
+
+![](READMEmd/progress09.gif)
+
+Then I remembered about the typewriter font I saw long time ago that looked pretty good, so I searched for something like this, for the book cards. I settled with the next two fonts:
+
+- [Adler Font](https://www.1001fonts.com/adler-font.html) by [Carini Type Foundry](https://www.1001fonts.com/users/carini/)
+- [Typewriter Font](https://www.1001fonts.com/typewriter-font.html) by [Fonthead Design](https://www.1001fonts.com/users/fonthead/)
+
+![](READMEmd/progress10.png)
+
+And, lastly, I styled the scrollbar for chromium based browsers. Already styled it and worked fine in Firefox, but I didn't know it was different for the other browsers, using pseudoelements instead of properties.
+
+### next steps
+Now I need to add some kind of image to the empty state, maybe change the default card color, and make the search bar functional. Then, the project is finished, for now.
