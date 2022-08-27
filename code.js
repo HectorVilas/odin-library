@@ -23,6 +23,9 @@ let myLibrary = [
   // {title:"",author:"",pages:"",read:false},
 ];
 
+//for storing filtered lists
+let searchList = [];
+
 //store globally the index for editing/deleting existing card
 let idx;
 
@@ -32,6 +35,7 @@ const
   btnAddBook = document.querySelector(".btn-add-book"),
   modalBook = document.querySelector(".modal-add-edit"),
   //inputs
+  search = document.querySelector("#search"),
   modalTitle = modalBook.querySelector("#title"),
   modalAuthor = modalBook.querySelector("#author"),
   modalPages = modalBook.querySelector("#pages"),
@@ -77,7 +81,7 @@ function addBookToLibrary() {
   );
   myLibrary.push(newBook);
   //redraw
-  placeBooks();
+  placeBooks("library");
   //close modal menu
   modalBook.close();
   //add image on empty state if no cards
@@ -100,16 +104,21 @@ function edditBookOnLibrary() {
     myLibrary = myLibrary.filter((item, i) => i != idx);
   };
   //place cards again and close modal
-  placeBooks();
+  placeBooks("library");
   modalBook.close();
   emptyState();
 }
 
 //place cards for each book in myLibrary, deleting the existing ones first
-function placeBooks() {
+function placeBooks(from) {
   main.innerHTML = "";
-
-  myLibrary.forEach((book, i) => {
+  let placingFrom;
+  if(from === "library"){
+    placingFrom = myLibrary;
+  } else if(from === "search"){
+    placingFrom = searchList;
+  }
+  placingFrom.forEach((book, i) => {
     const card = document.createElement("div");
     card.classList.add("card");
     
@@ -186,6 +195,21 @@ function emptyState() {
     main.classList.remove("no-cards");
 }
 
+//filter list on each keypress in the search ba
+function filter() {
+  if(this.value.length > 0){
+    searchList = [];
+    myLibrary.forEach(book => {
+      if(book.title.includes(this.value) || book.author.includes(this.value)) searchList.push(book);
+    });
+    placeBooks("search");
+    searchList = [];
+  } else {
+    placeBooks("library");
+  };
+};
+
+
 // - - - listeners - - -
 btnAddBook.addEventListener("click", toggleModal);
 btnModalAllClose.forEach(btn => {
@@ -196,9 +220,11 @@ modalBook.addEventListener("close", hideModalButtons);
 [btnModalSave,btnModalDelete].forEach(btn => {
   btn.addEventListener("click", edditBookOnLibrary);
 });
+search.addEventListener("input", filter);
 
 
 
 //for testing
-placeBooks();
+placeBooks("library");
 emptyState();
+search.value = "";
