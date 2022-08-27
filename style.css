@@ -157,6 +157,14 @@ main {
   scrollbar-width: thin;
   scrollbar-color: var(--color-scrollbar-1) var(--color-scrollbar-2);
 }
+main::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar-1);
+  border-radius: 10px;
+}
+main::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--color-scrollbar-2);
+}
 
 /* card design */
 .card {
