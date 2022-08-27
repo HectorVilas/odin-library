@@ -295,9 +295,32 @@ label:not(:last-child) {
 .modal-add-edit li:last-of-type {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: .25rem;
+  gap: .75rem;
   place-items: center left;
 }
+.modal-add-edit input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  box-shadow: var(--box-shadow-edit-in);
+  border-radius: 3px;
+  overflow: hidden;
+  background: url(./media/icons/check.png) no-repeat center;
+  background-size: 0%;
+}
+.modal-add-edit input[type="checkbox"]:checked {
+  background-color: var(--color-3);
+  box-shadow: var(--box-shadow-edit-out);
+  transition: background-size 250ms, background-color 150ms, box-shadow 150ms;
+  background-size: 80%;
+} .modal-add-edit input[type="checkbox"]:not(:checked) {
+  transition: background-size 100ms, background-color 100ms, box-shadow 150ms;
+  background-size: 0%;
+}
+
+/* title input anim when missing text on add/edit */
 .modal-add-edit #title.no-title {
   animation: pulse 500ms;
 }
