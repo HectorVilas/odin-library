@@ -322,13 +322,23 @@ label:not(:last-child) {
   background: url(./media/icons/check.png) no-repeat center;
   background-size: 0%;
 }
+.modal-add-edit input[type="checkbox"]:hover {
+  outline: 2px solid var(--color-1);
+  outline-offset: 3px;
+}
 .modal-add-edit input[type="checkbox"]:checked {
   background-color: var(--color-3);
   box-shadow: var(--box-shadow-edit-out);
-  transition: background-size 250ms, background-color 150ms, box-shadow 150ms;
+  transition:
+    background-size 350ms cubic-bezier(.7,0,.1,2),
+    background-color 150ms,
+    box-shadow 150ms;
   background-size: 80%;
 } .modal-add-edit input[type="checkbox"]:not(:checked) {
-  transition: background-size 100ms, background-color 100ms, box-shadow 150ms;
+  transition:
+    background-size 100ms,
+    background-color 100ms,
+    box-shadow 150ms;
   background-size: 0%;
 }
 
