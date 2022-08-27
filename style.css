@@ -49,6 +49,15 @@
   );
 }
 
+@font-face {
+  font-family: adler;
+  src: url(./media/fonts/Adler.ttf);
+}
+@font-face {
+  font-family: typeo;
+  src: url(./media/fonts/typeo___.ttf);
+}
+
 body {
   height: 100vh;
   display: grid;
@@ -171,18 +180,21 @@ main {
 /* card content */
 .card .title {
   grid-area: title;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 800;
+  font-family: adler, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 2.5em;
 }
 .card .author {
   grid-area: author;
   font-size: 2em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: typeo, 'Times New Roman', Times, serif;
+  font-weight: 400;
   justify-self: center;
 }
 .card .pages {
   grid-area: pages;
+  font-family: typeo, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 1.25em;
 }
 /* edit button */
