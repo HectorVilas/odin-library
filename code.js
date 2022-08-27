@@ -57,6 +57,8 @@ function addBookToLibrary() {
   placeBooks();
   //close modal menu
   modalBook.close();
+  //add image on empty state if no cards
+  emptyState();
 };
 
 //edit or delete existing book in myLibrary
@@ -77,6 +79,7 @@ function edditBookOnLibrary() {
   //place cards again and close modal
   placeBooks();
   modalBook.close();
+  emptyState();
 }
 
 //place cards for each book in myLibrary, deleting the existing ones first
@@ -153,6 +156,12 @@ function hideModalButtons() {
   });
 };
 
+//show image on empty state
+function emptyState() {
+  main.childElementCount === 0 ?
+    main.classList.add("no-cards") :
+    main.classList.remove("no-cards");
+}
 
 // - - - listeners - - -
 btnAddBook.addEventListener("click", toggleModal);

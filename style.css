@@ -143,6 +143,7 @@ header button {
 
 /* cards container */
 main {
+  position: relative;
   display: grid;
   overflow-y: auto;
   background: url(./media/images/wallpapers/windows-xp.jpg) no-repeat hsl(200, 60%, 45%) center;
@@ -164,6 +165,14 @@ main::-webkit-scrollbar-thumb {
 main::-webkit-scrollbar {
   width: 8px;
   background-color: var(--color-scrollbar-2);
+}
+main.no-cards::after {
+  position: absolute;
+  content: "";
+  background: url(./media/images/empty.png) no-repeat;
+  background-position: top right;
+  background-size: 50%;
+  inset: 1rem 4rem;
 }
 
 /* card design */
