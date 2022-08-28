@@ -270,7 +270,7 @@ I need to work in two more things before finishing the practice:
 - the search bar is still not functional and everyday feels a little more intimidating. I should finally "face this demon" and let it filter the books. Should be easy, but I still don't have planned my approach. I can make it search books, include authors or maybe apply some regEx magic and let it search the way Visual Studio searchs  in the intelliCode (the suggestion boxes), in which I could type "ader" and it will show "`ad`d`E`ventListene`r`".
 
 ## update 8
-I've been working in the checkbox style. I was having problems trying to hide the original design, so I had to check [this article](https://moderncss.dev/pure-css-custom-checkbox-style/) for a little help. I just followed some of the first steps to hide the necessary. After some styling, and applying a `cubic-bezier` with the help of Firefox's Inspector. I like how it looks, the new design now fits with the page's., this is the result:
+I've been working in the checkbox style. I was having problems trying to hide the original design, so I had to check [this article](https://moderncss.dev/pure-css-custom-checkbox-style/) for a little help. I just followed some of the first steps to hide the necessary. After some styling, and applying a `cubic-bezier` with the help of Firefox's Inspector. I like how it looks, the new design now fits with the page's. This is the result:
 
 ![](READMEmd/progress09.gif)
 
@@ -285,3 +285,17 @@ And, lastly, I styled the scrollbar for chromium based browsers. Already styled 
 
 ### next steps
 Now I need to add some kind of image to the empty state, maybe change the default card color, and make the search bar functional. Then, the project is finished, for now.
+
+## update 9
+I tried to create an image for the empty state. I had to use `JavaScript` to check if there's book in the parent, I couldn't find a way to do this with `CSS` only, `:empty` is only for `<p>`. The best thing that came to my mind was an empty bookshelf with spiderwebs, a text informing that the list is empty and an arrow pointing at the button to add books. I don't like how it looks, but it will do for now until I come with a better idea:
+
+![](READMEmd/progress11.png)
+
+Then, for testing, I added 20 books to the list, 20 best sellers I found on internet.
+
+And, finally, I worked in the search bar. It will hide books that doesn't match it's title or author with the search. My first approach was doing everything in the code, creating a new filtered list, and then placing this new list in the DOM.
+
+As a side effect, the edit button in the cards pointed to the wrong book. I deleted all the changes and made the search work directly in the DOM. If the card doesn't match with the search, a new class with `display: none` will be applied. If the search is empty or there's a match, this class will be removed. This way the cards still holds the index for it's book in a data attribute and everything keeps working as espected. IF the user edits a book with an active search, then the search will be applied again.
+
+### next steps
+I know I have to make some edits on this project in the next practices, so I think it's good to leave it like this until I'm asked to come back. I'm guessing `localStorage` will be one of those tasks.
