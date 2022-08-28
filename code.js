@@ -1,4 +1,7 @@
 let myLibrary = [
+];
+
+const placeholderBooks = [
   //this is a placeholder with top sellers, for testing
   {title:"Harry Potter and the Sorcerer's Stone",author:"J.K. Rowling",pages:"",read:false},
   {title:"The Hunger Games",author:"Suzanne Collins",pages:"",read:false},
@@ -207,6 +210,13 @@ function filter() {
   } else {
     domTitles.forEach(title => title.parentNode.classList.remove("hidden"))
   };
+  
+  if(search.value === "bang!"){
+    myLibrary = placeholderBooks;
+    search.value = "";
+    placeBooks();
+    emptyState();
+  }
 };
 
 

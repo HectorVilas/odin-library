@@ -30,7 +30,7 @@
      showgrid="true"
      inkscape:lockguides="false"
      inkscape:zoom="1.6819304"
-     inkscape:cx="135.8558"
+     inkscape:cx="74.022088"
      inkscape:cy="107.01989"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
@@ -68,6 +68,12 @@
   </sodipodi:namedview>
   <defs
      id="defs2">
+    <rect
+       x="17.836648"
+       y="252.09129"
+       width="230.09276"
+       height="43.402509"
+       id="rect452" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient12287">
@@ -83,8 +89,8 @@
     <rect
        x="5.4653796"
        y="5.0449658"
-       width="247.62374"
-       height="69.788694"
+       width="244.05641"
+       height="134.00063"
        id="rect9803" />
     <linearGradient
        inkscape:collect="always"
@@ -528,29 +534,50 @@
          style="font-style:normal;font-weight:normal;font-size:18.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9803);shape-padding:0.840828;display:inline;fill:#000000;fill-opacity:1;stroke:none"
          x="201.76077"
          y="0"><tspan
-           x="41.919542"
+           x="38.353136"
            y="22.402374"
-           id="tspan12581"><tspan
+           id="tspan788"><tspan
              style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end"
-             id="tspan12579">Looks like you don't
+             id="tspan786">Looks like you don't
 </tspan></tspan><tspan
-           x="80.857112"
+           x="77.290706"
            y="45.735749"
-           id="tspan12585"><tspan
+           id="tspan792"><tspan
              style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end"
-             id="tspan12583">have any books.
+             id="tspan790">have any books.
 </tspan></tspan><tspan
-           x="21.530182"
+           x="17.963776"
            y="69.069125"
-           id="tspan12589"><tspan
+           id="tspan798"><tspan
              style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end"
-             id="tspan12587">Click here to add one.</tspan></tspan></text>
+             id="tspan794">Click here to add one.</tspan><tspan
+             style="font-size:16px;-inkscape-font-specification:sans-serif"
+             id="tspan796">
+</tspan></tspan><tspan
+           x="70.70683"
+           y="92.402503"
+           id="tspan802"><tspan
+             style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif Bold'"
+             id="tspan800">(Or write &quot;bang!&quot; in the
+</tspan></tspan><tspan
+           x="41.162634"
+           y="115.73588"
+           id="tspan808"><tspan
+             style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif Bold'"
+             id="tspan804">search bar, without quotes</tspan><tspan
+             style="font-size:13.3333px"
+             id="tspan806">)</tspan></tspan></text>
       <path
          style="fill:url(#linearGradient12289);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
          id="path12281"
          d="m 71.543131,61.990456 c 1.387417,-1.088795 2.726566,-2.236928 3.991356,-3.46674 0.365533,-0.355423 0.720799,-0.721257 1.081199,-1.081884 2.356577,-2.419495 4.425013,-5.092679 6.405758,-7.821872 1.295646,-1.807588 2.468348,-3.701584 3.52556,-5.657871 0.609883,-1.12854 0.997124,-1.928762 1.570863,-3.07894 1.321601,-2.810523 2.60791,-5.644452 3.70818,-8.550465 0.256014,-0.676172 0.49344,-1.359236 0.740159,-2.038853 0.927071,-2.636973 1.901973,-5.261751 2.697956,-7.942795 0.26448,-0.890823 0.761619,-2.793669 1.00207,-3.701292 0.139816,-0.581484 0.283376,-1.162079 0.419446,-1.74445 0.190532,-0.815471 0.53458,-2.322533 0.675698,-3.163927 0.265856,-1.585134 0.373997,-3.191333 0.493845,-4.7919991 -0.06383,-3.7242995 1.430414,-5.9305242 0.358093,-9.20508675 -3.616061,1.87681435 -3.436043,0.7139268 -3.524583,2.47164495 -0.16332,1.5753781 -0.64034,3.0973554 -1.165098,4.5845103 -0.716021,1.9566852 -1.60596,3.8420146 -2.45527,5.7426376 -0.95595,2.219256 -1.855388,4.462631 -2.732056,6.714312 -0.27971,0.804483 -0.613685,1.590645 -0.894527,2.394612 -0.04918,0.140778 -0.135636,0.279037 -0.130014,0.42805 0.0043,0.112895 0.05478,0.347159 0.157488,0.300112 1.292535,-0.592039 2.482961,-1.385473 3.724439,-2.078209 0.927296,-1.374133 1.761564,-2.820321 2.460046,-4.324966 0.183729,-0.395783 0.346136,-0.801119 0.519205,-1.201678 3.297759,-9.7549577 0.813893,-13.87885837 7.111106,-0.956516 0.38977,0.786646 0.50107,0.962455 0.92251,1.711655 0.55376,0.898197 0.28192,0.474305 0.81162,1.274185 l 3.18665,-1.886077 v 0 c -0.592,-0.732754 -0.29361,-0.338895 -0.88746,-1.187397 -0.16034,-0.261037 -0.32675,-0.518435 -0.481,-0.783113 C 103.878,11.303603 103.073,9.572541 102.31511,7.8288133 101.58477,6.1523959 100.86461,4.4468832 99.790979,2.9547923 97.812991,0.18989593 96.64925,1.5206988 94.105858,2.9043302 c -0.23569,0.6730214 -0.207065,1.4112157 -0.344945,2.105834 -7.690937,33.9054508 4.180447,-4.75662336 0.982702,-3.4635063 0.64629,6.3463393 -0.03795,12.7051471 -1.342895,18.4726551 -0.153083,0.60266 -0.297379,1.20762 -0.459248,1.80798 -0.888439,3.295161 -1.93752,6.547996 -3.128624,9.745788 -1.426144,3.59765 -2.928271,7.168165 -4.63949,10.641062 -0.64584,1.267212 -0.92375,1.839045 -1.609143,3.079353 -1.069797,1.935941 -2.239195,3.817787 -3.525975,5.617314 -0.334041,0.458681 -0.662141,0.92175 -1.002125,1.376047 -1.689198,2.257161 -3.50462,4.422952 -5.491633,6.424676 -0.371314,0.361225 -0.736473,0.728885 -1.113941,1.083675 -1.404144,1.319779 -2.899378,2.548747 -4.504764,3.616584 l 3.617373,-1.421336 z"
          sodipodi:nodetypes="csccscscscssccccccscccscccccscsccccccsccscscsccc" />
     </g>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text450"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect452);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
   </g>
   <g
      inkscape:groupmode="layer"
