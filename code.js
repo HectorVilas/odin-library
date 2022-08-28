@@ -23,9 +23,6 @@ let myLibrary = [
   // {title:"",author:"",pages:"",read:false},
 ];
 
-//for storing filtered lists
-let searchList = [];
-
 //store globally the index for editing/deleting existing card
 let idx;
 
@@ -81,7 +78,7 @@ function addBookToLibrary() {
   );
   myLibrary.push(newBook);
   //redraw
-  placeBooks("library");
+  placeBooks();
   //close modal menu
   modalBook.close();
   //add image on empty state if no cards
@@ -104,21 +101,17 @@ function edditBookOnLibrary() {
     myLibrary = myLibrary.filter((item, i) => i != idx);
   };
   //place cards again and close modal
-  placeBooks("library");
+  placeBooks();
   modalBook.close();
   emptyState();
+  filter();
 }
 
 //place cards for each book in myLibrary, deleting the existing ones first
-function placeBooks(from) {
+function placeBooks() {
   main.innerHTML = "";
-  let placingFrom;
-  if(from === "library"){
-    placingFrom = myLibrary;
-  } else if(from === "search"){
-    placingFrom = searchList;
-  }
-  placingFrom.forEach((book, i) => {
+
+  myLibrary.forEach((book, i) => {
     const card = document.createElement("div");
     card.classList.add("card");
     
@@ -195,21 +188,24 @@ function emptyState() {
     main.classList.remove("no-cards");
 }
 
-//filter list on each keypress in the search ba
+//filter list on each keypress in the search bar
 function filter() {
-  if(this.value.length > 0){
-    let searchInput = this.value.toLowerCase();
-    searchList = [];
-    myLibrary.forEach(book => {
-      if(book.title.toLowerCase().includes(searchInput)
-        || book.author.toLowerCase().includes(searchInput)) {
-        searchList.push(book)
-      };
-    });
-    placeBooks("search");
-    searchList = [];
+  const userSearch = search.value.toLowerCase();
+  const domTitles = document.querySelectorAll(".card .title");
+  const domAuthors = document.querySelectorAll(".card .author");
+
+  if(search.value.length > 0){
+
+    for(let i = 0; i < domTitles.length; i++) {
+      if(domTitles[i].innerText.toLowerCase().includes(userSearch)
+      || domAuthors[i].innerText.toLowerCase().includes(userSearch)){
+        domTitles[i].parentNode.classList.remove("hidden");
+      } else {
+        domTitles[i].parentNode.classList.add("hidden");
+      }
+    }
   } else {
-    placeBooks("library");
+    domTitles.forEach(title => title.parentNode.classList.remove("hidden"))
   };
 };
 
@@ -229,6 +225,6 @@ search.addEventListener("input", filter);
 
 
 //for testing
-placeBooks("library");
+placeBooks();
 emptyState();
 search.value = "";
