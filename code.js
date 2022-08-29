@@ -60,6 +60,10 @@ function Book(title, author, pages, read) {
     this.read = read;
 };
 
+//a prototype to toggle this.read boolean, as asked in the practice
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
 
 
 // - - - functions - - -
@@ -98,7 +102,9 @@ function edditBookOnLibrary() {
     myLibrary[idx].title = modalTitle.value;
     myLibrary[idx].author = modalAuthor.value;
     myLibrary[idx].pages = modalPages.value;
-    myLibrary[idx].read = modalRead.checked;
+    if(myLibrary[idx].read != modalRead.checked) {
+      myLibrary[idx].toggleRead();
+    }
 
   } else if(this.className.includes("delete")){
     myLibrary = myLibrary.filter((item, i) => i != idx);
