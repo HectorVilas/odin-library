@@ -299,3 +299,33 @@ As a side effect, the edit button in the cards pointed to the wrong book. I dele
 
 ### next steps
 I know I have to make some edits on this project in the next practices, so I think it's good to leave it like this until I'm asked to come back. I'm guessing `localStorage` will be one of those tasks.
+
+## update 9
+I've read again the requisites for this practice, and just noticed that it requires a `prototype` for the `Book` constructor, so I made this:
+
+```javascript
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+```
+
+Then I modified the function that edits the books so, instead of replacing `this.read` with`true` or `false` by reading the checkbox's `checked` value, it will compare both booleans and toggle the one in the object if they are different, using it's prototype.
+
+```javascript
+function edditBookOnLibrary() {
+    //...
+    if(myLibrary[idx].read != modalRead.checked) {
+      myLibrary[idx].toggleRead();
+    }
+    //...
+```
+
+Doesn't look necessary, but now it meets the requirements for the practice.
+
+Another little changes:
+
+- placeholder books now are created with `new Book` or they will be just array type and the prototype won't work.
+- the scale and inset for the image on empty state has been adjusted, with a `max()` value. The image doesn't gets cut anymore on a narrow viewport.
+
+### thoughts
+I took too many liberties on this practice for [unnecesary reasons](https://youtu.be/YIiIK6cEZgU?t=3). I think the best approach would be editing the book in place, turning it's `<p>` into `<input>` and that's it.
