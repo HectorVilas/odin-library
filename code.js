@@ -212,7 +212,10 @@ function filter() {
   };
   
   if(search.value === "bang!"){
-    myLibrary = placeholderBooks;
+    placeholderBooks.forEach(book => {
+      let toBookClass = new Book(book.title, book.author, book.pages, book.read)
+      myLibrary.push(toBookClass);
+    })
     search.value = "";
     placeBooks();
     emptyState();
