@@ -171,8 +171,8 @@ main.no-cards::after {
   content: "";
   background: url(./media/images/empty.png) no-repeat;
   background-position: top right;
-  background-size: 50%;
-  inset: 1rem 4rem;
+  background-size: max(400px, 40%);
+  inset: 1rem 4rem 1rem 0;
 }
 
 /* card design */
