@@ -50,21 +50,21 @@ const
   btnModalDelete = modalBook.querySelector(".delete");
 
 
-// - - - constructors - - -
+// - - - classes - - -
 
-//book constructor
-function Book(title, author, pages, read) {
+//refactor constructor as class
+class Book {
+  constructor(title, author, pages, read){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-};
-
-//a prototype to toggle this.read boolean, as asked in the practice
-Book.prototype.toggleRead = function () {
-  this.read = !this.read;
-};
-
+  }
+  
+  toggleRead() {
+    this.read = !this.read;
+  }
+}
 
 // - - - functions - - -
 
